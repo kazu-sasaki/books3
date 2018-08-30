@@ -49,8 +49,12 @@ before_action :authenticate_user!, only: [:top, :index, :show, :edit]
        if @book.save
       redirect_to book_path(@book.id), notice: 'successfully'
     else
+      @user = current_user
+      @userbook = @user.books
+      p @book.errors.full_messages
+      render  template: "users/show"
+
     @books = Book.all
-      render action:  :new
     end
   end
 

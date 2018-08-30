@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params[:id])
     if @user.save
       # user page redirect
-      redirect_to user_path(current_user.id)
+      redirect_to user_path(current_user.id),  notice: 'successfully'
     else
       render 'edit'
     end
