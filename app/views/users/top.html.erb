@@ -1,0 +1,20 @@
+<%= render 'books/list' %>
+<p>ユーザー一覧</p>
+<table class="table table-striped">
+    <thead>
+    <tr>
+      <th>image</th>
+      <th>name</th>
+      <th>詳細</th>
+    </tr>
+    </thead>
+ <tbody>
+ <% @users.each do |user| %>
+  <tr>
+    <td><span><%= user.image %></span></td>
+    <td><span><%= user.name %></span></th></td>
+    <td><%= link_to "show", edit_book_path(user.id) </td>
+  </tr>
+ <% end %>
+ </tbody>
+</table>

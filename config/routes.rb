@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :blogs
+  resources :books
   resources :users
-  root to: 'user#index'
-  get '/about' => 'user#about'
-  
+  root to: 'users#index'
+  get '/about' => 'users#about'
+
 end

@@ -1,0 +1,23 @@
+ <%= render 'books/list', users: @users %>
+
+ <table>
+    <thead>
+    <tr>
+      <th>image</th>
+      <th>name</th>
+      <th colspan="3"></th>
+    </tr>
+    </thead>
+
+   <tbody>
+
+   <% @users.each do |user| %>
+<tr>
+    <td><%= attachment_image_tag user, :image, class: "img-circle pull-left profile-img", fallback: "no_image.jpg",size: '10x10' %></td>
+    <td><%= user.name %></td>
+    <td><%= link_to "show", user_path(user.id), class: "user_#{user.id}" %>  </td>
+</tr>
+
+    <% end %>
+   </tbody>
+   </table>

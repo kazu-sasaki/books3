@@ -1,0 +1,26 @@
+<%= render 'books/list' %>
+ <div style="background-color: blue;"> 
+   <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>user</th>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="5"></th>
+    </tr>
+    </thead>
+<tobody>
+<% @userbook.each do |userbook| %>
+<tr>
+<td><%= attachment_image_tag @user, :image, class: "img-circle pull-left profile-img", fallback: "no_image.jpg",size: '50x50' %></td>
+ <% if @user = current_user %>
+ <% end %>
+
+<td><%= link_to userbook.title, book_path(userbook), class: "book_#{userbook}" %> </td>
+<td><%= userbook.body %></td>
+<% end %>
+</tr>	
+   </tbody>
+</tobody>
+</table>
+</div>

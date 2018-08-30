@@ -1,0 +1,25 @@
+ <tableclass="table table-striped">
+    <thead>
+    <tr>
+      <th>user</th>
+      <th>title</th>
+      <th>body</th>
+    </tr>
+    </thead>
+
+ <tbody>
+
+   <% @book.each do |book| %>
+
+<td><%= attachment_image_tag book, :image, class: "img-circle pull-left profile-img", fallback: "no_image.jpg",size: '10x10' %></td>
+
+
+    <td><%= book.title %></td>
+    <td><%= book.body %></td>
+
+
+    <% end %>
+  </tr>
+   </tbody>
+   </table>
+
