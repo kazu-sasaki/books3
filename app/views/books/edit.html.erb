@@ -1,4 +1,13 @@
-<%= render 'books/list' %>
+<table class="table table-striped">
+ <div class="col-lg-12" style="background-color: gray;"> 
+<header>
+<th><span class="glyphicon glyphicon-home" aria-hidden="true"><%= link_to "home", user_path(current_user), class: "home" %> </span></th>
+<th><span class="glyphicon glyphicon-user" aria-hidden="true"><%= link_to "users",  new_user_path, class: "users" %> </span></th>
+<th><span class="glyphicon glyphicon-book" aria-hidden="true"><%= link_to "book", books_path, class: "books" %></span></th>
+<th><span class="glyphicon glyphicon-log-out" aria-hidden="true"><%= link_to 'logout', destroy_user_session_path, class: "logout", method: :delete %></span></th>
+</header>
+</div>
+</table>
 <h1>編集画面</h1>
 <%= notice %>
 
@@ -9,5 +18,5 @@
     <%= f.text_area :body, class: "book_body" %>
     <%= f.submit '保存' %>
     <% end %>
-
-<!--  <%= link_to "back", new_book_path  %>-->
+<%= link_to "show", book_path(@book.id), class: "book_#{@book}" %>
+<%= link_to "back", books_path, class: "back" %>
