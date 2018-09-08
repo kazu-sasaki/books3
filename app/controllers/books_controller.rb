@@ -22,7 +22,7 @@ before_action :authenticate_user!, only: [:top, :index, :show, :edit]
       redirect_to user_path
     end
 
-    # if user = User.find(params[:id]) 
+    # if user = User.find(params[:id])
     #   current_user.id = @book.user_id
     #   redirect_to user_path
     # else
@@ -33,14 +33,16 @@ before_action :authenticate_user!, only: [:top, :index, :show, :edit]
   end
 
   def show
-        @book = Book.find(params[:id])
+        @book_show = Book.find(params[:id])
+        @book = Book.new
         p '----id'
         p @book
         p @book.user_id
 
-        @user = User.find(@book.user_id)
+        @user = User.find(@book_show.user_id)
         p '----@user'
         p @user
+
   end
 
   def create
@@ -69,7 +71,7 @@ before_action :authenticate_user!, only: [:top, :index, :show, :edit]
         book.destroy
         redirect_to user_path(current_user)
     end
-    
+
  private
 
   def post_params
