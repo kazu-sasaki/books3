@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def show
-     @user = User.find(params[:id]) 
+     @user = User.find(params[:id])
      @book = Book.new
      @userbook = @user.books
   end
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
-    
+
   end
 
   def edit
