@@ -1,26 +1,25 @@
 <table class="table table-striped">
  <div class="col-lg-12" style="background-color: gray;">
-<header>
+  <tr>
 <th><span class="glyphicon glyphicon-home" aria-hidden="true"><%= link_to "home", user_path(current_user), class: "home" %> </span></th>
 <th><span class="glyphicon glyphicon-user" aria-hidden="true"><%= link_to "users",  new_user_path, class: "users" %> </span></th>
 <th><span class="glyphicon glyphicon-book" aria-hidden="true"><%= link_to "book", books_path, class: "books" %></span></th>
 <th><span class="glyphicon glyphicon-log-out" aria-hidden="true"><%= link_to 'logout', destroy_user_session_path, class: "logout", method: :delete %></span></th>
-</header>
+</tr>
 </div>
 </table>
 
-  <div class="container"> <!-- ここを追加 -->
+  <div class="container">
       <div class="row">
 
           <div class="col-lg-4" style="background-color: orange;">
 
-<teble class="table table-striped">
-<header>
-
+<table class="table table-striped">
+  <tr>
+<th>
 <td>メイン画面</td>
 <%= notice %>
-</header>
-
+</th>
 <tbody>
 <th><%= attachment_image_tag current_user, :image, class: "img-circle pull-left profile-img", fallback: "no_image.jpg",size: '100x100' %>
 </th>
@@ -28,12 +27,12 @@
 <th><%= current_user.name %></th>
 <th>自己紹介</th>
 <th><%= current_user.profile %></th>
-
 <br>
-<th><%= link_to "登録情報の変更", edit_user_path(current_user.id), class: "edit_user_#{current_user.id}" %></th>
+<th><%= link_to "変更", edit_user_path(current_user.id), class: "edit_user_#{current_user.id}" %></th>
 </tbody>
+</tr>
 
-   <!--記事投稿-->
+
 <p>記事投稿</p>
 
 <% if @book.errors.any? %>,
@@ -57,7 +56,7 @@
 
        <%= f.submit '投稿' %>
 <% end %>
-</teble>
+</table>
 
       </div>  <!-- ここを追加 -->
   </div>      <!-- ここを追加 -->

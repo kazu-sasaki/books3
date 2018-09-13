@@ -1,14 +1,13 @@
 <%= render 'books/list' %>
 <p>ユーザー一覧</p>
 <table class="table table-striped">
- <div class="col-lg-8" style="background-color: gray;"> 
     <thead>
     <tr>
       <th>image</th>
       <th>name</th>
       <th>詳細</th>
     </tr>
-    </thead>
+</thead>
  <tbody>
  <% @users.each do |user| %>
   <tr>
@@ -18,5 +17,4 @@
   </tr>
  <% end %>
  </tbody>
-</div>
 </table>

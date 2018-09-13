@@ -1,4 +1,4 @@
- <tableclass="table table-striped">
+ <table class="table table-striped">
     <thead>
     <tr>
       <th>user</th>
@@ -6,21 +6,13 @@
       <th>body</th>
     </tr>
     </thead>
-
  <tbody>
-
    <% @book.each do |book| %>
-
+   <tr>
 <td><%= attachment_image_tag book, :image, class: "img-circle pull-left profile-img", fallback: "no_image.jpg",size: '10x10' %></td>
-
-
     <td><%= book.title %></td>
     <td><%= book.body %></td>
-
-
     <% end %>
   </tr>
-   </tbody>
-   </table>
-
-</tableclass="table>
+ </tbody>
+</table class="table>

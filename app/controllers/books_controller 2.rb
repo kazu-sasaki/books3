@@ -7,7 +7,7 @@ before_action :authenticate_user!, only: [:top, :index, :show, :edit]
      @user = current_user
  end
 
- def new
+  def new
     @book = Book.new
     @books = Book.all
   end
@@ -29,9 +29,11 @@ before_action :authenticate_user!, only: [:top, :index, :show, :edit]
         p '----id'
         p @book
         p @book.user_id
+
         @user = User.find(@book_show.user_id)
         p '----@user'
         p @user
+
   end
 
   def create
@@ -44,6 +46,7 @@ before_action :authenticate_user!, only: [:top, :index, :show, :edit]
       @userbook = @user.books
       p @book.errors.full_messages
       render  template: "users/show"
+
     @books = Book.all
     end
   end
@@ -61,7 +64,9 @@ before_action :authenticate_user!, only: [:top, :index, :show, :edit]
     end
 
  private
+
   def post_params
       params.require(:book).permit(:title, :body)
   end
+
 end
