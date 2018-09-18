@@ -35,7 +35,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(user_params)
       # user page redirect
-      redirect_to user_path(current_user.id)
+      redirect_to user_path(current_user.id),  notice: 'successfully'
     else
       render 'edit'
     end

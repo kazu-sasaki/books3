@@ -31,10 +31,7 @@
 <th><%= link_to "変更", edit_user_path(current_user.id), class: "edit_user_#{current_user.id}" %></th>
 </tbody>
 </tr>
-
-
 <p>記事投稿</p>
-
 <% if @book.errors.any? %>,
   <div id="error_explanation" class="alert alert-danger">
     <ul>
@@ -44,7 +41,6 @@
     </ul>
   </div>
 <% end %>
-
 
 <%= form_for(@book) do |f| %>
 
@@ -57,8 +53,7 @@
        <%= f.submit '投稿' %>
 <% end %>
 </table>
-
-      </div>  <!-- ここを追加 -->
-  </div>      <!-- ここを追加 -->
+      </div>
+  </div>
 
 </div>
